@@ -1,0 +1,5 @@
+const adminModel = {
+    quizzes: [
+        // quizModel ...
+    ],
+};
