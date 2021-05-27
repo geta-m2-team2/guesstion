@@ -1,5 +1,0 @@
-const adminModel = {
-    quizzes: [
-        // quizModel ...
-    ],
-};
