@@ -12,9 +12,9 @@ function renderErrorPageView(errorCode) {
 
 function renderCurrentPageView() {
     switch(model.currentPage) {
-        case 0:
+        case "home":
             return renderHomePageView();
-        case 1:
+        case "lobby":
             return renderLobbyPageView();
         default:
             return renderErrorPageView(404);

@@ -1,0 +1,28 @@
+body{
+    width: 100vw;
+    height:100vh;
+}
+.participants-container {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding:10px;
+
+}
+.participant-nick{
+    font-size:1rem;
+    text-align:center;
+    margin:0.2rem;
+    border: 2px solid black;
+    border-radius: 15%;
+    padding: 0.5rem;
+}
+
+/*.participant-nick:nth-child(4n) {*/
+/*    clear: left;*/
+/*}*/
+
+.participant-nick:nth-child(even) {
+    background-color: darkolivegreen;
+}

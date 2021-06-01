@@ -1,12 +1,67 @@
 const model = {
-    currentPage: 0,
+    currentPage: "lobby",
     currentQuiz: null,
     isQuizMaster: false,
     nick: "user1",
     users: [
         {
             // User
-            nick: null,
+            nick: "user1",
+            score: 0,
+            answers: [
+                {
+                    contentType: "text",
+                    content: "Et norsk IKT-selskap.",
+                }
+            ] // list of answers.
+        },
+        {
+            // User
+            nick: "user2",
+            score: 0,
+            answers: [
+                {
+                    contentType: "text",
+                    content: "Et norsk IKT-selskap.",
+                }
+            ] // list of answers.
+        },
+        {
+            // User
+            nick: "user3",
+            score: 0,
+            answers: [
+                {
+                    contentType: "text",
+                    content: "Et norsk IKT-selskap.",
+                }
+            ] // list of answers.
+        },
+        {
+            // User
+            nick: "user4",
+            score: 0,
+            answers: [
+                {
+                    contentType: "text",
+                    content: "Et norsk IKT-selskap.",
+                }
+            ] // list of answers.
+        },
+        {
+            // User
+            nick: "user5",
+            score: 0,
+            answers: [
+                {
+                    contentType: "text",
+                    content: "Et norsk IKT-selskap.",
+                }
+            ] // list of answers.
+        },
+        {
+            // User
+            nick: "user6",
             score: 0,
             answers: [
                 {
