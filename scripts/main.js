@@ -16,6 +16,7 @@ function updateViews() {
 }
 
 function goToPage(pageName) {
+    console.log("goToPage", pageName);
     model.currentPage = pageName;
     updateViews();
 }
