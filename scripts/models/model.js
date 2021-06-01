@@ -1,12 +1,11 @@
 const model = {
     currentPage: "lobby",
-    currentQuiz: null,
     isQuizMaster: false,
     nick: "user1",
     users: [
         {
             // User
-            nick: "user1",
+            nick: "James",
             score: 0,
             answers: [
                 {
@@ -17,7 +16,7 @@ const model = {
         },
         {
             // User
-            nick: "user2",
+            nick: "Emma",
             score: 0,
             answers: [
                 {
@@ -28,7 +27,7 @@ const model = {
         },
         {
             // User
-            nick: "user3",
+            nick: "Nickolas",
             score: 0,
             answers: [
                 {
@@ -39,7 +38,7 @@ const model = {
         },
         {
             // User
-            nick: "user4",
+            nick: "Richard",
             score: 0,
             answers: [
                 {
@@ -50,7 +49,7 @@ const model = {
         },
         {
             // User
-            nick: "user5",
+            nick: "Ziggy",
             score: 0,
             answers: [
                 {
@@ -61,7 +60,7 @@ const model = {
         },
         {
             // User
-            nick: "user6",
+            nick: "Ben",
             score: 0,
             answers: [
                 {
@@ -84,8 +83,7 @@ const model = {
             }
         }
     ],
-    quizzes: [
-        {
+    quiz: {
             soundtrack: {
                 contentType: "youtube-url",
                 content: "https://www.youtube.com/watch?v=XwuxFtaaOW0",
@@ -118,5 +116,4 @@ const model = {
                 } // question
             ] // questions
         } // quiz
-    ], // quizzes
 }; // model
