@@ -1,5 +1,5 @@
 const model = {
-    currentPage: "lobby",
+    currentPage: "home",
     isQuizMaster: false,
     nick: "user1",
     users: [
