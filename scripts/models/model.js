@@ -11,7 +11,7 @@ const model = {
             answers: [
                 {
                     contentType: "text",
-                    content: "Et norsk IT-selskap.",
+                    content: "Et norsk IKT-selskap.",
                 }
             ] // list of answers.
         },
@@ -22,9 +22,9 @@ const model = {
                 questionNo: 0,
                 question: "Hva var Norsk Data?",
                 answerNo: 0,
-                option = {
+                option: {
                     contentType: "text",
-                    content: "Et norsk IT-selskap.",
+                    content: "Et norsk IKT-selskap.",
                 }
             }
         }
@@ -44,7 +44,7 @@ const model = {
                         {
                             // Option
                             contentType: "text",
-                            content: "Et norsk IT-selskap.",
+                            content: "Et norsk IKT-selskap.",
                             isCorrect: true
                         },
                         {
