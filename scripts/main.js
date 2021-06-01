@@ -6,8 +6,8 @@ function updateViews() {
     `;
 }
 
-function renderErrorPageView(errorCode) {
-    return "FIXME: Implement renderErrorPageView!";
+function renderErrorPageView(errorCode, page) {
+    return `Error ${errorCode} when requesting page "${page}"`;
 }
 
 function renderCurrentPageView() {
@@ -17,7 +17,7 @@ function renderCurrentPageView() {
         case "lobby":
             return renderLobbyPageView();
         default:
-            return renderErrorPageView(404);
+            return renderErrorPageView(404, model.currentPage);
       }
 }
 
