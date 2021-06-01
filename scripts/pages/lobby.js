@@ -6,7 +6,7 @@ function renderLobbyPageView() {
             ${printParticipantList()}
         </div>
         <br><br>
-        <button>Launch quiz</button> FIXME: Add "If QM" logic!
+        <button>Launch quiz</button> <p>FIXME: Add "If QM" logic!</p>
     `;
 }
 
