@@ -47,7 +47,7 @@ function getOptions() {
         let optionClasses = "question-option";
 
         // If option has image, append special class for specific styling.
-        if (hasImage) optionClass += " question-option-image";
+        if (hasImage) optionClasses += " question-option-image";
 
         optionsHTML += `
                             <div class="${optionClasses}" ${hasImage ? 'style="background-image: url(' + option.content + ')"': ""}>
