@@ -1,0 +1,34 @@
+.participants-container {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    float:center;
+    grid-template-columns: auto auto auto auto auto;
+    padding:10px;
+    margin:auto;
+}
+.participant-nick{
+    font-size:0.75rem;
+    text-align:center;
+    margin:0.2rem;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#lobbyPageBody > h1, h2, h3, h4, p{
+    text-align:center;
+}
+
+.participant-nick > h3{
+    margin:0.2rem;
+    text-shadow:0.1rem 0.1rem #000;
+}
+
+.participant-nick:nth-child(even) {
+    background-color: darkolivegreen;
+    border-color: rgb(39, 49, 20);
+}
+
+.participant-nick:nth-child(odd) {
+    background-color:chocolate;
+    border-color: rgb(44, 27, 14);
+}

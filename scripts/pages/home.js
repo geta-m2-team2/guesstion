@@ -7,7 +7,9 @@ function renderHomePageView() {
             <h4>Nickname</h4>
             <input type="text" class="homeInput" placeholder="Nickname">
             <br><br>
-            <button>Join</button>
+            <button onClick="joinGame()">Join</button>
         </div>
     `;
 }
+
+
