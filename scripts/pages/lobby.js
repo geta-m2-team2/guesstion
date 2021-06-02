@@ -7,7 +7,7 @@ function renderLobbyPageView() {
                 ${printParticipantList()}
             </div>
             <br><br>
-            <button>Launch quiz</button> <p>FIXME: Add "If QM" logic!</p>
+            <button ${model.isQuizMaster ? "" : "disabled"} onClick="launchQuiz()">Launch quiz</button>
         </div>
     `;
 }
@@ -26,4 +26,8 @@ function printParticipantList() {
     // return getParticipantsNicks().join(" ");
 
     return a;
+}
+
+function launchQuiz() {
+    goToPage("question");
 }
