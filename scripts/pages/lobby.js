@@ -1,15 +1,21 @@
 function renderLobbyPageView() {
     return `
-        <h1>Quiz Lobby</h1>
-        <h2>Participants</h2>
-        <div class="participants-container">
-            ${printParticipantList()}
+        <div id="lobbyPageBody">
+            <h1>Quiz Lobby</h1>
+            <h2>Participants</h2>
+            <div class="participants-container">
+                ${printParticipantList()}
+            </div>
+            <br><br>
+            <button>Launch quiz</button> <p>FIXME: Add "If QM" logic!</p>
         </div>
-        <br><br>
-        <button>Launch quiz</button> <p>FIXME: Add "If QM" logic!</p>
     `;
 }
 
+/**
+ * Get list of participants.
+ * @returns {String} HTML string of participants.
+ */
 function printParticipantList() {
     let a = "";
 
