@@ -19,4 +19,14 @@ button {
     border-color: rgb(34, 17, 48);
 }
 
+button:hover {
+    cursor: pointer;
+    background-color:rgb(159, 106, 202);
+}
+
+button:disabled {
+    cursor:default;
+    background-color:rgb(120, 79, 153);
+    opacity: 0.2;
+}
 

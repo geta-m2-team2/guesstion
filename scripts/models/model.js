@@ -1,7 +1,9 @@
 const model = {
     currentPage: "home",
     isQuizMaster: false,
-    nick: "user1",
+    inputQuizMasterPassword: "",
+    quizMasterPassword: "a",
+    nick: "",
     users: [
         {
             // User

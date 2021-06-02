@@ -2,10 +2,16 @@
     text-align:center;
     
 }
-#homePageBody > .homeInput{
+.home-input {
     display:block;
     margin:auto;
     text-align:center;
     border:2px solid rgb(150,150,150);
-    border-radius:10%;
+    border-radius:10px;
+    margin-bottom: 15px;
+}
+
+.quiz-master-login {
+    /* display: inline-block; */
+    text-align:center;
 }
