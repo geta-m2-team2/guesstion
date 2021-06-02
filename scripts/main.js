@@ -11,6 +11,7 @@ function updateViews() {
       <select name="Page" id="page-nav" onChange="goToPage(this.value.toLowerCase())">
         <option value="Home" ${model.currentPage === "home" ? 'selected="selected"' : ""}>Home</option>
         <option value="Lobby" ${model.currentPage === "lobby" ? 'selected="selected"' : ""}>Lobby</option>
+        <option value="Question" ${model.currentPage === "question" ? 'selected="selected"' : ""}>Question</option>
       </select>
     `;
 }
@@ -31,6 +32,8 @@ function renderCurrentPageView() {
             return renderHomePageView();
         case "lobby":
             return renderLobbyPageView();
+        case "question":
+            return renderQuestionView();
         default:
             return renderErrorPageView(404, model.currentPage);
       }

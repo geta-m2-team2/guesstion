@@ -1,5 +1,5 @@
 const model = {
-    currentPage: "home",
+    currentPage: "question",
     isQuizMaster: false,
     nick: "user1",
     users: [
@@ -88,10 +88,13 @@ const model = {
                 contentType: "youtube-url",
                 content: "https://www.youtube.com/watch?v=XwuxFtaaOW0",
             },
+            currentQuestion: 0,
             questions: [
                 {
                     // Question
-                    title: "Hva var Norsk Data?",
+                    title: "Norsk Data",
+                    description: "Hva var Norsk Data?",
+                    imageUrl: null,
                     scoreMultiplier: 1,
                     options: [
                         {
@@ -103,13 +106,46 @@ const model = {
                         {
                             // Option
                             contentType: "image-url",
-                            content: "https://en.wikipedia.org/wiki/Turnip#/media/File:Turnip_2622027.jpg",
+                            content: "https://puu.sh/HLDW2/60d0248ebc.jpg",
                             isCorrect: false,
                         },
                         {
                             // Option
                             contentType: "text",
                             content: "En butikkjede.",
+                            isCorrect: false,
+                        } // option
+                    ] // options
+                }, // question
+                {
+                    // Question
+                    title: "Portal",
+                    description: "Hva heter karakteren du spiller i Portal 2",
+                    imageUrl: "https://puu.sh/HLDHF/57622c6603.jpg",
+                    scoreMultiplier: 1,
+                    options: [
+                        {
+                            // Option
+                            contentType: "text",
+                            content: "Alyx",
+                            isCorrect: true
+                        },
+                        {
+                            // Option
+                            contentType: "text",
+                            content: "Chell",
+                            isCorrect: true,
+                        },
+                        {
+                            // Option
+                            contentType: "text",
+                            content: "Gabe",
+                            isCorrect: false,
+                        }, // option
+                        {
+                            // Option
+                            contentType: "text",
+                            content: "GLaDOS",
                             isCorrect: false,
                         } // option
                     ] // options
