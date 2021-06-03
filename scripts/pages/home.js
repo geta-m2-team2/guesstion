@@ -27,6 +27,18 @@ function loginQuizMaster() {
 
 function joinGame()
 {
+    for (let user of model.users) {
+        if (user.nick.toLowerCase() === model.nick.toLowerCase()) {
+            alert("Nickname is already in use, pick another one!");
+
+            model.nick = "";
+
+            updateViews();
+
+            return;
+        }
+    }
+
     model.users.push(
         {
             nick: model.nick,
@@ -36,7 +48,7 @@ function joinGame()
     )
 
     if (model.nick !== "") {
-        goToPage("lobby"); 
+        goToPage("lobby");
     } else {
         alert("Nickname is required to join game!");
     }
