@@ -22,13 +22,15 @@ function renderResultsView() {
 
     let vboxWidth = graphWidth; // 80
     let vboxHeight = barHeight; // 100
+    // let vboxWidth = 500; // 80
+    // let vboxHeight = 500; // 100
     let vboxMinX = 0;
     let vboxMinY = 0;
 
     return `
         <h1>Results</h1>
 
-        <svg id="chart" width="500" height="300" viewBox="${vboxMinX} ${vboxMinY} ${vboxWidth} ${vboxHeight}">
+        <svg id="chart" width="${vboxWidth}px" height="${vboxHeight}px" viewBox="${vboxMinX} ${vboxMinY} ${vboxWidth} ${vboxHeight}">
             ${svgInnerHtml}
         </svg>
 
@@ -42,14 +44,28 @@ function renderResultsView() {
 
 function createBar(number, barNo) {
     let x = barNo * (BAR_WIDTH + BAR_SPACING);
-    let height = number * 1;
-    let y = 0;
-    if (barHeight === number) {
-        y = barHeight;
-    } else {
-        y = height;
-    }
+    // let height = number * 1;
+    // let y = 0;
+    // if (barHeight === number) {
+    //     y = barHeight;
+    // } else {
+    //     y = height;
+    // }
 
+    // barHeight = 135 == 100%
+    // bar2Height = 17 == ??? %
+
+    // let height;
+    
+    // if (number !== barHeight) {
+    //     // height = (barHeight * 100 / number) + "%";
+    //     height = Math.floor(((number / barHeight) * 100)) + "%"
+    // } else {
+    //     height = "100%";
+    // }
+
+    let y = barHeight - number;
+    let height = number;
     graphWidth += x;
     
     return `
