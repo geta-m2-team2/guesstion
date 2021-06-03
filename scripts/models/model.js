@@ -1,5 +1,5 @@
 const model = {
-    currentPage: "results",
+    currentPage: "home",
     isQuizMaster: true,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",
@@ -90,7 +90,7 @@ const model = {
                 contentType: "youtube-url",
                 content: "https://www.youtube.com/watch?v=XwuxFtaaOW0",
             },
-            currentQuestion: 1,
+            currentQuestion: 0,
             questions: [
                 {
                     // Question
