@@ -155,7 +155,7 @@ const model = {
                             contentType: "text",
                             content: "GLaDOS",
                             isCorrect: false,
-                            votes: 135
+                            votes: 95
                         } // option
                     ] // options
                 } // question

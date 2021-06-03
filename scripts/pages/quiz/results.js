@@ -4,6 +4,9 @@ const BAR_SPACING = 10;
 let barHeight = 10;
 let graphWidth = 0;
 
+// let vboxWidth = 500; // 80
+// let vboxHeight = 500; // 100
+
 function renderResultsView() {
     let question = model.quiz.questions[model.quiz.currentQuestion];
     let svgInnerHtml = '';
@@ -20,17 +23,17 @@ function renderResultsView() {
         svgInnerHtml += createBar(question.options[i].votes, i);
     }
 
-    let vboxWidth = graphWidth; // 80
-    let vboxHeight = barHeight; // 100
-    // let vboxWidth = 500; // 80
-    // let vboxHeight = 500; // 100
+    // let vboxWidth = graphWidth; // 80
+    // let vboxHeight = barHeight; // 100
+    let vboxWidth = 100; // 80
+    let vboxHeight = 100; // 100
     let vboxMinX = 0;
     let vboxMinY = 0;
 
     return `
         <h1>Results</h1>
 
-        <svg id="chart" width="${vboxWidth}px" height="${vboxHeight}px" viewBox="${vboxMinX} ${vboxMinY} ${vboxWidth} ${vboxHeight}">
+        <svg id="chart" width="500px" height="500px" viewBox="${vboxMinX} ${vboxMinY} ${vboxWidth} ${vboxHeight}">
             ${svgInnerHtml}
         </svg>
 
@@ -64,14 +67,27 @@ function createBar(number, barNo) {
     //     height = "100%";
     // }
 
-    let y = barHeight - number;
+
+    let y; // = barHeight - number;
     let height = number;
     graphWidth += x;
+
+    // calc pct:
+    if (number !== barHeight) {
+        // height = (barHeight * 100 / number) + "%";
+        height = Math.floor(((number / barHeight) * 100));
+        y = (barHeight - height);
+    } else {
+        height = barHeight;
+        y = 0;
+    }
+
+
     
     return `
-        <rect class="question-option" width="${BAR_WIDTH}" height="${height}" x="${x}" y="${y}"></rect>
-        
+            <rect id="bar${barNo}" width="${BAR_WIDTH}" height="${height}" x="${x}" y="${y}"></rect>
+            <text class="bar-text" width="${BAR_WIDTH}" x="${x + (BAR_WIDTH/3)}" y="99%">${number}</text>
         `;
 }
 
-  // <text x="${x}" y="${y}" dy=".1em">${number}</text>
+  // 

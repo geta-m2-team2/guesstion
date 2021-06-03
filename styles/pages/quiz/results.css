@@ -1,15 +1,26 @@
-.question-option:nth-child(1) {
+#bar0 {
     fill: #66bf39;
 }
 
-.question-option:nth-child(2) {
+#bar1 {
     fill: rgb(223, 69, 69);
 }
 
-.question-option:nth-child(3) {
+#bar2 {
     fill: #1368ce;
 }
 
-.question-option:nth-child(4) {
+#bar3 {
     fill: #ffa602;
+}
+
+#chart {
+    border: 1px solid black;
+}
+
+.bar-text {
+    /* font-size: small; */
+    font: normal 3px sans-serif;
+    font-weight: bolder;
+    fill:white;
 }
