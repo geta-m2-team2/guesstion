@@ -3,7 +3,10 @@ function renderResultScoreboardView() {
 
     return `
         <h1>ScoreBoard</h1>
-        ${model.isQuizMaster ? `<button onClick="goToPage('results')"><==</button>` : ""}
-        ${model.isQuizMaster ? `<button onClick="${isFinalQuestion ? "goToPage('scoreboard-final')" : "proceedToPage('question')"}">==></button>` : ""}
+        <div class="quizNavBody">
+            ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="goToPage('results')">‹</button>` : ""}
+            ${model.isQuizMaster ? `<button class="lobbyButton navButtons" onClick="returnToLobby()">Return to Lobby</button>` : ""}
+            ${model.isQuizMaster ? `<button class="forwardButton navButtons" onClick="${isFinalQuestion ? "goToPage('scoreboard-final')" : "proceedToPage('question')"}">›</button>` : ""}
+        </div>  
     `;
 }

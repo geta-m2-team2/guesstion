@@ -30,3 +30,10 @@ button:disabled {
     opacity: 0.2;
 }
 
+.quizNavBody{
+    display:block;
+    margin:auto;
+}
+.navButtons{
+    display:inline-block;
+}

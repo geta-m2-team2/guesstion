@@ -130,7 +130,7 @@ const model = {
                             // Option
                             contentType: "text",
                             content: "Alyx",
-                            isCorrect: true
+                            isCorrect: false
                         },
                         {
                             // Option

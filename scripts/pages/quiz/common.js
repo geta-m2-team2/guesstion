@@ -13,3 +13,7 @@ function proceedToPage(page, forwards = true) {
         }
     }
 }
+
+function returnToLobby() {
+    if (confirm("Are you sure?")) goToPage("lobby");
+}
