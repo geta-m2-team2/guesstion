@@ -1,6 +1,6 @@
 const model = {
-    currentPage: "home",
-    isQuizMaster: false,
+    currentPage: "results",
+    isQuizMaster: true,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",
     nick: "",
@@ -90,7 +90,7 @@ const model = {
                 contentType: "youtube-url",
                 content: "https://www.youtube.com/watch?v=XwuxFtaaOW0",
             },
-            currentQuestion: 0,
+            currentQuestion: 1,
             questions: [
                 {
                     // Question
@@ -103,19 +103,22 @@ const model = {
                             // Option
                             contentType: "text",
                             content: "Et norsk IKT-selskap.",
-                            isCorrect: true
+                            isCorrect: true,
+                            votes: 5
                         },
                         {
                             // Option
                             contentType: "image-url",
                             content: "https://puu.sh/HLDW2/60d0248ebc.jpg",
                             isCorrect: false,
+                            votes: 10
                         },
                         {
                             // Option
                             contentType: "text",
                             content: "En butikkjede.",
                             isCorrect: false,
+                            votes: 3
                         } // option
                     ] // options
                 }, // question
@@ -130,25 +133,29 @@ const model = {
                             // Option
                             contentType: "text",
                             content: "Alyx",
-                            isCorrect: false
+                            isCorrect: false,
+                            votes:45
                         },
                         {
                             // Option
                             contentType: "text",
                             content: "Chell",
                             isCorrect: true,
+                            votes: 5
                         },
                         {
                             // Option
                             contentType: "text",
                             content: "Gabe",
                             isCorrect: false,
+                            votes: 75
                         }, // option
                         {
                             // Option
                             contentType: "text",
                             content: "GLaDOS",
                             isCorrect: false,
+                            votes: 100
                         } // option
                     ] // options
                 } // question
