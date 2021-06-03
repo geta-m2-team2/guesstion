@@ -1,5 +1,6 @@
 function renderQuestionView() {
     let question = model.quiz.questions[model.quiz.currentQuestion];
+    console.log("q", question)
 
     return `
     <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
@@ -13,6 +14,9 @@ function renderQuestionView() {
             </div>
             <div id="question-timer-container"></div>
             <div id="options-container">${getOptions()}</div>
+            ${model.isQuizMaster ? `<button onClick="goToPage('lobby')">Return to Lobby</button>` : ""}
+            ${model.isQuizMaster ? `<button onClick="proceedToPage('results', false)"><==</button>` : ""}
+            ${model.isQuizMaster ? `<button onClick="goToPage('results')">==></button>` : ""}
         </div>
     `;
 }

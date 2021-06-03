@@ -1,6 +1,6 @@
 const model = {
-    currentPage: "home",
-    isQuizMaster: false,
+    currentPage: "question",
+    isQuizMaster: true,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",
     nick: "",
