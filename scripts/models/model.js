@@ -134,7 +134,7 @@ const model = {
                             contentType: "text",
                             content: "Alyx",
                             isCorrect: false,
-                            votes:45
+                            votes:15
                         },
                         {
                             // Option
@@ -148,14 +148,14 @@ const model = {
                             contentType: "text",
                             content: "Gabe",
                             isCorrect: false,
-                            votes: 75
+                            votes: 25
                         }, // option
                         {
                             // Option
                             contentType: "text",
                             content: "GLaDOS",
                             isCorrect: false,
-                            votes: 95
+                            votes: 35
                         } // option
                     ] // options
                 } // question

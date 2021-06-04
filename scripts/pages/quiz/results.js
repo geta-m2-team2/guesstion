@@ -3,6 +3,7 @@ const BAR_SPACING = 10;
 
 let barHeight = 10;
 let graphWidth = 0;
+let votesTotal = 0;
 
 // let vboxWidth = 500; // 80
 // let vboxHeight = 500; // 100
@@ -11,11 +12,16 @@ function renderResultsView() {
     let question = model.quiz.questions[model.quiz.currentQuestion];
     let svgInnerHtml = '';
     votes = [];
+    // votesTotal = 0;
     
-    // Determine most votes to calculate the correct height
     for (let i = 0; i < question.options.length; i++) {
+        // Determine most votes to calculate the correct height
         if (question.options[i].votes > barHeight) barHeight = question.options[i].votes;
         console.log("bar height is now", barHeight)
+
+        // Get most votes
+        votesTotal += question.options[i].votes;
+
     }
 
     for (let i = 0; i < question.options.length; i++) {
@@ -25,8 +31,8 @@ function renderResultsView() {
 
     // let vboxWidth = graphWidth; // 80
     // let vboxHeight = barHeight; // 100
-    let vboxWidth = 100; // 80
-    let vboxHeight = 100; // 100
+    let vboxWidth = graphWidth; // 80
+    let vboxHeight = votesTotal; // 100
     let vboxMinX = 0;
     let vboxMinY = 0;
 
@@ -73,15 +79,19 @@ function createBar(number, barNo) {
     graphWidth += x;
 
     // calc pct:
-    if (number !== barHeight) {
-        // height = (barHeight * 100 / number) + "%";
-        height = Math.floor(((number / barHeight) * 100));
-        y = (barHeight - height);
-    } else {
-        height = barHeight;
-        y = 0;
-    }
+    // if (number !== barHeight) {
+    //     // height = (barHeight * 100 / number) + "%";
+    //     height = Math.floor(((number / barHeight) * 100));
+    //     // y = (barHeight - height);
+    //     y = (votesTotal - height);
+    // } else {
+    //     height = barHeight;
+    //     // y = 0;
+    //     y =  (votesTotal - height);
+    // }
 
+    height = Math.floor(((number / barHeight) * 100));
+    y =  (votesTotal - height);
 
     
     return `
