@@ -27,12 +27,15 @@ function renderQuestionView() {
  * @param {Object} option Option to parse.
  * @returns {String} Computed option content string.
  */
-function getOptionContent(option) {
+function getTextOptionContent(option) {
     console.log("getOptionContent", option);
-    if (option.contentType === "text") {
-        return `<p>${option.content}</p>`;
-    } else if (option.contentType === "image-url") {
+    if (!option.contentText) {
+        console.error("Missing contentText for option!". option);
+        return;
+    } else if (option.contentImage) {
         return "";
+    } else if (option.contentText) {
+        return `<p>${option.contentText}</p>`;
     } else {
         console.error("Unexpected option contentType!". option.contentType);
         return;
@@ -43,23 +46,24 @@ function getOptionContent(option) {
  * Get list of options.
  * @returns {String} Options HTML string.
  */
-function getOptions() {
+function getOptions(returnString = true) {
     let question = model.quiz.questions[model.quiz.currentQuestion];
-    let optionsHTML = "";
+    let options = [];
 
     for (let option of question.options) {
-        const hasImage = option.contentType === "image-url";
         let optionClasses = "question-option";
 
         // If option has image, append special class for specific styling.
-        if (hasImage) optionClasses += " question-option-image";
+        if (option.contentImage) optionClasses += " question-option-image";
 
-        optionsHTML += `
-                            <div class="${optionClasses}" ${hasImage ? 'style="background-image: url(' + option.content + ')"': ""}>
-                                ${getOptionContent(option)}
+        options.push( `
+                            <div class="${optionClasses}" ${option.contentImage ? 'style="background-image: url(' + option.contentImage + ')"': ""}>
+                                ${getTextOptionContent(option)}
                             </div>
-                        `;
+                        `);
     }
 
-    return optionsHTML;
+    if (returnString) return options.join(" ")
+
+    return options;
 }

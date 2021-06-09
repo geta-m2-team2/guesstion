@@ -1,5 +1,6 @@
 const model = {
     viewsCallbackFunc: undefined,
+    viewsCallbackArgs: [],
     currentPage: "results",
     isQuizMaster: true,
     inputQuizMasterPassword: "",
@@ -12,8 +13,8 @@ const model = {
             score: 0,
             answers: [
                 {
-                    contentType: "text",
-                    content: "Et norsk IKT-selskap.",
+                    contentText: "Et norsk IKT-selskap.",
+                    contentImage: null
                 }
             ] // list of answers.
         },
@@ -23,8 +24,8 @@ const model = {
             score: 0,
             answers: [
                 {
-                    contentType: "text",
-                    content: "Et norsk IKT-selskap.",
+                    contentText: "Et norsk IKT-selskap.",
+                    contentImage: null
                 }
             ] // list of answers.
         },
@@ -34,8 +35,8 @@ const model = {
             score: 0,
             answers: [
                 {
-                    contentType: "text",
-                    content: "Et norsk IKT-selskap.",
+                    contentText: "Et norsk IKT-selskap.",
+                    contentImage: null
                 }
             ] // list of answers.
         },
@@ -45,8 +46,8 @@ const model = {
             score: 0,
             answers: [
                 {
-                    contentType: "text",
-                    content: "Et norsk IKT-selskap.",
+                    contentText: "Et norsk IKT-selskap.",
+                    contentImage: null
                 }
             ] // list of answers.
         },
@@ -56,8 +57,8 @@ const model = {
             score: 0,
             answers: [
                 {
-                    contentType: "text",
-                    content: "Et norsk IKT-selskap.",
+                    contentText: "Et norsk IKT-selskap.",
+                    contentImage: null
                 }
             ] // list of answers.
         },
@@ -67,8 +68,8 @@ const model = {
             score: 0,
             answers: [
                 {
-                    contentType: "text",
-                    content: "Et norsk IKT-selskap.",
+                    contentText: "Et norsk IKT-selskap.",
+                    contentImage: null
                 }
             ] // list of answers.
         },
@@ -80,8 +81,8 @@ const model = {
                 question: "Hva var Norsk Data?",
                 answerNo: 0,
                 option: {
-                    contentType: "text",
-                    content: "Et norsk IKT-selskap.",
+                    contentText: "Et norsk IKT-selskap.",
+                    contentImage: null
                 }
             }
         }
@@ -102,22 +103,22 @@ const model = {
                     options: [
                         {
                             // Option
-                            contentType: "text",
-                            content: "Et norsk IKT-selskap.",
+                            contentText: "Et norsk IKT-selskap.",
+                            contentImage: null,
                             isCorrect: true,
                             votes: 5
                         },
                         {
                             // Option
-                            contentType: "image-url",
-                            content: "https://puu.sh/HLDW2/60d0248ebc.jpg",
+                            contentText: "Picture of turnips",
+                            contentImage: "https://puu.sh/HLDW2/60d0248ebc.jpg",
                             isCorrect: false,
                             votes: 10
                         },
                         {
                             // Option
-                            contentType: "text",
-                            content: "En butikkjede.",
+                            contentText: "En butikkjede.",
+                            contentImage: null,
                             isCorrect: false,
                             votes: 3
                         } // option
@@ -132,29 +133,29 @@ const model = {
                     options: [
                         {
                             // Option
-                            contentType: "text",
-                            content: "Alyx",
+                            contentText: "Alyx",
+                            contentImage: null,
                             isCorrect: false,
                             votes:15
                         },
                         {
                             // Option
-                            contentType: "text",
-                            content: "Chell",
+                            contentText: "Chell",
+                            contentImage: null,
                             isCorrect: true,
                             votes: 5
                         },
                         {
                             // Option
-                            contentType: "text",
-                            content: "Gabe",
+                            contentText: "Gabe",
+                            contentImage: null,
                             isCorrect: false,
                             votes: 25
                         }, // option
                         {
                             // Option
-                            contentType: "text",
-                            content: "GLaDOS",
+                            contentText: "GLaDOS",
+                            contentImage: null,
                             isCorrect: false,
                             votes: 35
                         } // option

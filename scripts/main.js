@@ -1,14 +1,6 @@
-// Alt 1: Callback.
-let appCallback;
-
-function setCallback(callback) {
-    appCallback = callback;
-};
-
+const images = ['https://i.stack.imgur.com/2RAv2.png', 'https://i.stack.imgur.com/Tq5DA.png', 'https://i.stack.imgur.com/3KRtW.png', 'https://i.stack.imgur.com/iLyVi.png'];
 function updateViews() {
-    console.log(appCallback)
-    let renderedPage = renderCurrentPageView(setCallback); // Alt 1: Callback.
-    console.log(appCallback)
+    let renderedPage = renderCurrentPageView(); // Alt 1: Callback.
 
     document.getElementById("app").innerHTML = `
         <div id="content">
@@ -16,13 +8,15 @@ function updateViews() {
         </div>
     `;
 
-    // Alt 1: Callback.
-    appCallback();
+    if (model.viewsCallbackFunc) {
+        // Callback app.
+        model.viewsCallbackFunc(...model.viewsCallbackArgs)
+        
         // Unset callback.
-    appCallback = undefined;
-
-     // Alt 2: model attrib holding a func.
-    model.viewsCallbackFunc = undefined;
+        model.viewsCallbackFunc = undefined;
+        model.viewsCallbackArgs = [];
+    } 
+    
 
     // FIXME: Temporary development manual page navigation
     document.getElementById("devel-nav").innerHTML = `   

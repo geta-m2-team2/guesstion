@@ -67,3 +67,23 @@
     height: 50%;
     width: 50%;
 }
+
+.quizNavBody{
+    width:80%;
+    display:flex;
+    margin:auto;
+}
+
+.backButton, .forwardButton{
+    display:inline-block;
+    width:40px;
+}
+.backButton{
+    margin-left:30%;
+}
+.forwardButton{
+    margin-right:30%;
+}
+.lobbyButton{
+    width:150px;
+}

@@ -8,42 +8,17 @@ let votesTotal = 0;
 // let vboxWidth = 500; // 80
 // let vboxHeight = 500; // 100
 
-function renderResultsView(callback) {
+function renderResultsView() {
     let question = model.quiz.questions[model.quiz.currentQuestion];
     let svgInnerHtml = '';
     votes = [];
-
-    // Alt 1: Callback.
-    if (callback) callback(createBarChart);
     
     // Alt 2: model attrib holding a func.
     model.viewsCallbackFunc = createBarChart;
-    
-    for (let i = 0; i < question.options.length; i++) {
-        // Determine most votes to calculate the correct height
-        if (question.options[i].votes > barHeight) barHeight = question.options[i].votes;
-        console.log("bar height is now", barHeight)
-
-        // Get most votes
-        votesTotal += question.options[i].votes;
-
-    }
-
-    for (let i = 0; i < question.options.length; i++) {
-        // votes.push(option.votes);
-        svgInnerHtml += createBar(question.options[i].votes, i);
-    }
-
-    // let vboxWidth = graphWidth; // 80
-    // let vboxHeight = barHeight; // 100
-    let vboxWidth = graphWidth; // 80
-    let vboxHeight = votesTotal; // 100
-    let vboxMinX = 0;
-    let vboxMinY = 0;
 
     return `
       <div id="results-container">
-          <h1>Results</h1>
+          <h1>Results #${model.quiz.currentQuestion+1}/${model.quiz.questions.length}: ${question.title}</h1>
 
           <div id="my-chart"></div>
 
@@ -56,41 +31,19 @@ function renderResultsView(callback) {
     `;
 }
 
-// const labels = Utils.months({count: 7});
-// const data = {
-//   labels: labels,
-//   datasets: [{
-//     label: 'My First Dataset',
-//     data: [65, 59, 80, 81, 56, 55, 40],
-//     backgroundColor: [
-//       'rgba(255, 99, 132, 0.2)',
-//       'rgba(255, 159, 64, 0.2)',
-//       'rgba(255, 205, 86, 0.2)',
-//       'rgba(75, 192, 192, 0.2)',
-//       'rgba(54, 162, 235, 0.2)',
-//       'rgba(153, 102, 255, 0.2)',
-//       'rgba(201, 203, 207, 0.2)'
-//     ],
-//     borderColor: [
-//       'rgb(255, 99, 132)',
-//       'rgb(255, 159, 64)',
-//       'rgb(255, 205, 86)',
-//       'rgb(75, 192, 192)',
-//       'rgb(54, 162, 235)',
-//       'rgb(153, 102, 255)',
-//       'rgb(201, 203, 207)'
-//     ],
-//     borderWidth: 1
-//   }]
-// };
+function createBarChart(votes) {
+    let question = model.quiz.questions[model.quiz.currentQuestion];
 
-// const config = {
-//     type: 'line',
-//     data,
-//     options: {}
-//   };
+    let svgInnerHtml = '';
+    votes = [];
 
-function createBarChart() {
+    for (let option of question.options) {
+        votes.push(option.votes);
+    }
+
+    let labelPrefaces = ['A', 'B', 'C', 'D'];
+    let currentOptionLabelIndex = 0;
+
     let canvas = document.createElement('canvas');
 
     canvas.classList.add("styled-chart");
@@ -99,24 +52,36 @@ function createBarChart() {
 
     let myChart = new Chart(ctx, {
         type: 'bar',
+        // plugins: [{
+        //     afterDraw: chart => {      
+        //       var ctx = chart.chart.ctx; 
+        //       var xAxis = chart.scales['x-axis-0'];
+        //       var yAxis = chart.scales['y-axis-0'];
+        //       xAxis.ticks.forEach((value, index) => {  
+        //         var x = xAxis.getPixelForTick(index);      
+        //         var image = new Image();
+        //         image.src = images[index],
+        //         ctx.drawImage(image, x - 12, yAxis.bottom + 10);
+        //       });      
+        //     }
+        // }],
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green'],
+            labels: question.options.map(
+                function(obj) {
+                    let retv = `${labelPrefaces[currentOptionLabelIndex]}: ${obj.contentText}`;
+                    currentOptionLabelIndex++;
+
+                    return retv;
+                }),
             datasets: [{
                 label: '# of Votes',
-                data: [12, 55, 3, 5],
+                data: votes,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)'
+                    '#66bf39',
+                    'rgb(223, 69, 69)',
+                    '#1368ce',
+                    '#ffa602'
                 ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)'
-                ],
-                borderWidth: 1
             }]
         },
         options: {

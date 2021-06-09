@@ -1,3 +1,7 @@
+body{
+    width:100vw;
+}
+
 #bar0 {
     fill: #66bf39;
 }
@@ -26,12 +30,38 @@
 }
 
 #results-container{
+    width:80%;
     display:block;
     margin:auto;
+}
+
+#results-container > h1{
+    text-align:center;
 }
 
 #my-chart {
     /* min-height:128px; */
     width: 50vw;
     max-width: 50vw;
+    margin:auto;
 }
+.quiz-nav-container{
+    width:80%;
+    display:flex;
+    margin:auto;
+}
+
+.backButton, .forwardButton{
+    display:inline-block;
+    width:40px;
+}
+.backButton{
+    margin-left:30%;
+}
+.forwardButton{
+    margin-right:30%;
+}
+.lobbyButton{
+    width:150px;
+}
+
