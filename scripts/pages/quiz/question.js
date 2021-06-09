@@ -37,7 +37,7 @@ function getTextOptionContent(option) {
     } else if (option.contentText) {
         return `<p>${option.contentText}</p>`;
     } else {
-        console.error("Unexpected option contentType!". option.contentType);
+        console.error("Unexpected option attribs!". option);
         return;
     }
 }

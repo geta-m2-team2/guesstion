@@ -52,19 +52,6 @@ function createBarChart(votes) {
 
     let myChart = new Chart(ctx, {
         type: 'bar',
-        // plugins: [{
-        //     afterDraw: chart => {      
-        //       var ctx = chart.chart.ctx; 
-        //       var xAxis = chart.scales['x-axis-0'];
-        //       var yAxis = chart.scales['y-axis-0'];
-        //       xAxis.ticks.forEach((value, index) => {  
-        //         var x = xAxis.getPixelForTick(index);      
-        //         var image = new Image();
-        //         image.src = images[index],
-        //         ctx.drawImage(image, x - 12, yAxis.bottom + 10);
-        //       });      
-        //     }
-        // }],
         data: {
             labels: question.options.map(
                 function(obj) {
@@ -74,7 +61,7 @@ function createBarChart(votes) {
                     return retv;
                 }),
             datasets: [{
-                label: '# of Votes',
+                label:"Test",
                 data: votes,
                 backgroundColor: [
                     '#66bf39',
@@ -88,6 +75,11 @@ function createBarChart(votes) {
             scales: {
                 y: {
                     beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
                 }
             }
         }
