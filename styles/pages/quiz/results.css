@@ -24,3 +24,14 @@
     font-weight: bolder;
     fill:white;
 }
+
+#results-container{
+    display:block;
+    margin:auto;
+}
+
+#my-chart {
+    /* min-height:128px; */
+    width: 50vw;
+    max-width: 50vw;
+}

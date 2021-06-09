@@ -1,5 +1,6 @@
 const model = {
-    currentPage: "home",
+    viewsCallbackFunc: undefined,
+    currentPage: "results",
     isQuizMaster: true,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",

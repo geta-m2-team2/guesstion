@@ -1,9 +1,28 @@
+// Alt 1: Callback.
+let appCallback;
+
+function setCallback(callback) {
+    appCallback = callback;
+};
+
 function updateViews() {
+    console.log(appCallback)
+    let renderedPage = renderCurrentPageView(setCallback); // Alt 1: Callback.
+    console.log(appCallback)
+
     document.getElementById("app").innerHTML = `
         <div id="content">
-            ${renderCurrentPageView()}
+            ${renderedPage}
         </div>
     `;
+
+    // Alt 1: Callback.
+    appCallback();
+        // Unset callback.
+    appCallback = undefined;
+
+     // Alt 2: model attrib holding a func.
+    model.viewsCallbackFunc = undefined;
 
     // FIXME: Temporary development manual page navigation
     document.getElementById("devel-nav").innerHTML = `   
@@ -29,7 +48,7 @@ function renderErrorPageView(errorCode, page) {
     return `Error ${errorCode} when requesting page "${page}"`;
 }
 
-function renderCurrentPageView() {
+function renderCurrentPageView(callback) {
     switch(model.currentPage) {
         case "home":
             return renderHomePageView();
@@ -38,7 +57,7 @@ function renderCurrentPageView() {
         case "question":
             return renderQuestionView();
         case "results":
-            return renderResultsView();
+            return renderResultsView(callback);
         case "scoreboard":
             return renderResultScoreboardView();
         case "scoreboard-final":
