@@ -7,45 +7,56 @@
 }
 
 .rostrum-divs-container {
-    display:block;
-    min-width: 100px;
-    width: 100px;
-    margin:25px;
+    display:flex;
+    width: 650px;
     text-align:center;
+    margin:auto;
 }
 
 .rostrum-place1-container {
-    display:inline-block;
+    position: relative;
+    align-self: flex-end;
     height: 400px;
     border: 2px solid goldenrod;;
     background-color: gold;
+    margin:0px 25px;
+    width:200px;
 }
 
 .rostrum-place2-container {
-    display:inline-block;
+    position: relative;
+    align-self: flex-end;
     height:300px;
+    width:200px;
     border: 2px solid rgb(150, 150, 150);;
     background-color: silver;
 }
 
 .rostrum-place3-container {
-    display:inline-block;
+    position: relative;
+    align-self: flex-end;
     height: 200px;
+    width:200px;
     border: 2px solid #a36628;
     background-color: #cd7f32;
 }
 
-.rostrum-divs-container {
-    margin:auto;
-}
 
 .rostrum-above-nick {
     margin: 0;
+    font-size: 3rem;
 }
 
 .rostrum-place-signifier {
-    font-size: 5rem;
+    position:absolute;
+    float: none;
+    font-size: 6rem;
+    font-weight: bolder;
     text-align: center;
+    margin: auto;
+    bottom: -15px;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .rostrum-score {

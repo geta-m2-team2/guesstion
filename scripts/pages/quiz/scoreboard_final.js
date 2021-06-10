@@ -9,26 +9,21 @@ function renderFinalScoreboardView() {
         <div id="rostrum-container">
             <h1>Rostrum</h1>
             <div class="rostrum-divs-container">
-                <div class="rostrum-place2-container">
+            <div class="rostrum-place2-container">
                     <div class="rostrum-above-nick">${sortedUsers[1].nick}</div>
-                    <div class="rostrum rostrum-place2">
-                        <div class="rostrum-place-signifier">2</div>
-                        <div class="rostrum-score">${sortedUsers[1].score}</div>
-                    </div>
-                </div>
+                    <div class="rostrum-score">${sortedUsers[1].score}</div>
+                    <div class="rostrum-place-signifier">2</div>
+                    
+            </div>
                 <div class="rostrum-place1-container">
                     <div class="rostrum-above-nick">${sortedUsers[0].nick}</div>
-                    <div class="rostrum rostrum-place1">
-                        <div class="rostrum-place-signifier">1</div>
-                        <div class="rostrum-score">${sortedUsers[0].score}</div>
-                    </div>
+                    <div class="rostrum-score">${sortedUsers[0].score}</div>
+                    <div class="rostrum-place-signifier">1</div>
                 </div>
                 <div class="rostrum-place3-container">
                     <div class="rostrum-above-nick">${sortedUsers[2].nick}</div>
-                    <div class="rostrum rostrum-place3">
-                        <div class="rostrum-place-signifier">3</div>
-                        <div class="rostrum-score">${sortedUsers[1].score}</div>
-                    </div>
+                    <div class="rostrum-score">${sortedUsers[1].score}</div>
+                    <div class="rostrum-place-signifier">3</div>
                 </div>
             </div>
         </div>
