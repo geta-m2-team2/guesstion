@@ -7,7 +7,7 @@
 }
 
 .nick-col {
-    width: 500px;
+    width: 400px;
     text-align: left;
 }
 
@@ -19,4 +19,14 @@
 
 #scoreboard-container > h1{
     text-align:center;
+}
+
+#scoreboard-container > table {
+    text-align:center;
+}
+
+.featured-score {
+    padding-top: 50px;
+    font-size: 1.5rem;
+    text-align: center;
 }

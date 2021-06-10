@@ -5,12 +5,16 @@ function renderResultScoreboardView() {
     <div id="scoreboard-container">
         <h1>ScoreBoard</h1>
         ${generatePlayerScoreTable()}
+        <div class="featured-score">
+            ${getFeaturedScore()}
+        </div>
+    </div>
+        
         <div class="quizNavBody">
             ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="goToPage('results')">‹</button>` : ""}
             ${model.isQuizMaster ? `<button class="lobbyButton navButtons" onClick="returnToLobby()">Return to Lobby</button>` : ""}
             ${model.isQuizMaster ? `<button class="forwardButton navButtons" onClick="${isFinalQuestion ? "goToPage('scoreboard-final')" : "proceedToPage('question')"}">›</button>` : ""}
         </div>
-    </div>
     `;
 }
 
@@ -35,7 +39,7 @@ function determineDeltaChar(score, prevScore) {
  * @returns {string} Generated HTML.
  */
  function generatePlayerScoreTable() {
-    let usersSortedByDescScore = model.users.sort(function(a, b) {
+    model.users.sort(function(a, b) {
         return b.score - a.score;
     });
 
@@ -81,7 +85,18 @@ function determineDeltaChar(score, prevScore) {
     `;
 }
 
+/**
+ * FIXME: What if most increase tie?
+ * FIXME: Show more events than just most increase?
+ * @returns 
+ */
+function getFeaturedScore() {
+    model.users.sort(function(a, b) {
+        return b.score - a.score;
+    });
 
-function getPlayerScores(playerAmount) {
-
+    let highestRankedUser = model.users[0];
+    let scoreDelta = highestRankedUser.score - highestRankedUser.prevScore;
+    
+    return `${highestRankedUser.nick} gained the most points, with an increase of ${scoreDelta} pts. this round!`
 }
