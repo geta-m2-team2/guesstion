@@ -2,13 +2,13 @@ function renderResultScoreboardView() {
     let isFinalQuestion = model.quiz.questions.length === model.quiz.currentQuestion + 1;
 
     return `
-    <div id="scoreboard-container">
         <h1>ScoreBoard</h1>
-        ${generatePlayerScoreTable()}
+        <div id="scoreboard-container">
+            ${generatePlayerScoreTable()}
+        </div>
         <div class="featured-score">
             ${getFeaturedScore()}
         </div>
-    </div>
         
         <div class="quizNavBody">
             ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="goToPage('results')">‹</button>` : ""}

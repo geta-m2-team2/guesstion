@@ -1,7 +1,7 @@
 const model = {
     viewsCallbackFunc: undefined,
     viewsCallbackArgs: [],
-    currentPage: "scoreboard-final",
+    currentPage: "scoreboard",
     isQuizMaster: true,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",

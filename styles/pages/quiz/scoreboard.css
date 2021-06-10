@@ -11,18 +11,8 @@
     text-align: left;
 }
 
-#scoreboard-container {
-    width:80%;
-    display:block;
+.scoreboard-table{
     margin:auto;
-}
-
-#scoreboard-container > h1{
-    text-align:center;
-}
-
-#scoreboard-container > table {
-    text-align:center;
 }
 
 .featured-score {

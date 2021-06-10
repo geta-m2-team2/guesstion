@@ -1,11 +1,3 @@
-.rostrum-container{
-    width:80vw;
-}
-
-.rostrum-container > h1{
-    text-align:center;
-}
-
 .rostrum-divs-container {
     display:flex;
     width: 650px;
@@ -62,4 +54,8 @@
 .rostrum-score {
     font-size: 2rem;
     text-align: center;
+}
+
+.quizNavBody{
+    margin: 25px auto;
 }
