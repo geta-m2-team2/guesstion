@@ -1,0 +1,22 @@
+.score-increased {
+    color: green;
+}
+
+.scoreboard-table {
+    font-size: 2rem;
+}
+
+.nick-col {
+    width: 500px;
+    text-align: left;
+}
+
+#scoreboard-container {
+    width:80%;
+    display:block;
+    margin:auto;
+}
+
+#scoreboard-container > h1{
+    text-align:center;
+}

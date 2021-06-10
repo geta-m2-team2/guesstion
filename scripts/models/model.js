@@ -1,7 +1,7 @@
 const model = {
     viewsCallbackFunc: undefined,
     viewsCallbackArgs: [],
-    currentPage: "results",
+    currentPage: "scoreboard",
     isQuizMaster: true,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",
@@ -10,18 +10,24 @@ const model = {
         {
             // User
             nick: "James",
-            score: 0,
+            prevScore: 700,
+            score: 1000,
             answers: [
                 {
                     contentText: "Et norsk IKT-selskap.",
                     contentImage: null
+                },
+                {
+                    contentText: "Chell",
+                    contentImage: null,
                 }
             ] // list of answers.
         },
         {
             // User
             nick: "Emma",
-            score: 0,
+            prevScore: 1500,
+            score: 2000,
             answers: [
                 {
                     contentText: "Et norsk IKT-selskap.",
@@ -32,7 +38,8 @@ const model = {
         {
             // User
             nick: "Nickolas",
-            score: 0,
+            prevScore: 650,
+            score: 950,
             answers: [
                 {
                     contentText: "Et norsk IKT-selskap.",
@@ -43,7 +50,8 @@ const model = {
         {
             // User
             nick: "Richard",
-            score: 0,
+            prevScore: 600,
+            score: 600,
             answers: [
                 {
                     contentText: "Et norsk IKT-selskap.",
@@ -54,7 +62,8 @@ const model = {
         {
             // User
             nick: "Ziggy",
-            score: 0,
+            prevScore: 1000,
+            score: 1500,
             answers: [
                 {
                     contentText: "Et norsk IKT-selskap.",
@@ -65,7 +74,8 @@ const model = {
         {
             // User
             nick: "Ben",
-            score: 0,
+            prevScore: 500,
+            score: 500,
             answers: [
                 {
                     contentText: "Et norsk IKT-selskap.",
