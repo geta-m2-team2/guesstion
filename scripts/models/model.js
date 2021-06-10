@@ -1,101 +1,56 @@
 const model = {
     viewsCallbackFunc: undefined,
     viewsCallbackArgs: [],
-    currentPage: "scoreboard",
+    currentPage: "lobby",
     isQuizMaster: true,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",
-    nick: "",
+    nick: "James",
+    timeLeft: 10,
+    countDownIntervalID: undefined,
     users: [
         {
             // User
-            nick: "James",
-            prevScore: 700,
-            score: 1000,
-            answers: [
-                {
-                    contentText: "Et norsk IKT-selskap.",
-                    contentImage: null
-                },
-                {
-                    contentText: "Chell",
-                    contentImage: null,
-                }
-            ] // list of answers.
+            nick: "James",  // Nickname
+            prevScore: 500, // Score from previous question answer.
+            score: 500,     // Total score.
+            answers: [0,2]  // list of answers (question option indexes).
         },
         {
             // User
             nick: "Emma",
-            prevScore: 1500,
-            score: 2000,
-            answers: [
-                {
-                    contentText: "Et norsk IKT-selskap.",
-                    contentImage: null
-                }
-            ] // list of answers.
+            prevScore: 0,
+            score: 0,
+            answers: [2,3] // list of answers.
         },
         {
             // User
             nick: "Nickolas",
-            prevScore: 650,
-            score: 950,
-            answers: [
-                {
-                    contentText: "Et norsk IKT-selskap.",
-                    contentImage: null
-                }
-            ] // list of answers.
+            prevScore: 500,
+            score: 1000,
+            answers: [0,1] // list of answers.
         },
         {
             // User
             nick: "Richard",
-            prevScore: 600,
-            score: 600,
-            answers: [
-                {
-                    contentText: "Et norsk IKT-selskap.",
-                    contentImage: null
-                }
-            ] // list of answers.
+            prevScore: 500,
+            score: 500,
+            answers: [0,0] // list of answers.
         },
         {
             // User
             nick: "Ziggy",
-            prevScore: 1000,
-            score: 1500,
-            answers: [
-                {
-                    contentText: "Et norsk IKT-selskap.",
-                    contentImage: null
-                }
-            ] // list of answers.
+            prevScore: 500,
+            score: 1000,
+            answers: [0,1] // list of answers.
         },
         {
             // User
             nick: "Ben",
-            prevScore: 500,
-            score: 500,
-            answers: [
-                {
-                    contentText: "Et norsk IKT-selskap.",
-                    contentImage: null
-                }
-            ] // list of answers.
+            prevScore: 0,
+            score: 0,
+            answers: [2,2] // list of answers.
         },
-    ],
-    userAnswers: [
-        {
-            "user1": {
-                questionNo: 0,
-                question: "Hva var Norsk Data?",
-                answerNo: 0,
-                option: {
-                    contentText: "Et norsk IKT-selskap.",
-                    contentImage: null
-                }
-            }
-        }
     ],
     quiz: {
             soundtrack: {

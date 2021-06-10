@@ -8,10 +8,12 @@ function updateViews() {
         </div>
     `;
 
+    console.log("viewsCallbackFunc", model.viewsCallbackFunc);
+    console.log("viewsCallbackArgs", model.viewsCallbackArgs);
+    
     if (model.viewsCallbackFunc) {
         // Callback app.
-        model.viewsCallbackFunc(...model.viewsCallbackArgs)
-        
+        model.viewsCallbackFunc(...model.viewsCallbackArgs);
         // Unset callback.
         model.viewsCallbackFunc = undefined;
         model.viewsCallbackArgs = [];
