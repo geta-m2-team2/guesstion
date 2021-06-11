@@ -21,12 +21,21 @@
     background-size: cover;
 }
 
-.question-option:hover {
+.question-option-clickable:hover {
     cursor: pointer;
 }
 
-.question-option-image:hover {
+.question-option-image-clickable:hover {
     opacity: 0.5;
+}
+
+.question-option-not-clickable {
+    cursor: default !important;
+    opacity: 0.5 !important;
+}
+
+.question-option-not-clickable:hover {
+    opacity: 0.5 !important;
 }
 
 .question-option:nth-child(1) {
@@ -45,19 +54,19 @@
     background-color: #ffa602;
 }
 
-.question-option:nth-child(1):hover {
+.question-option-clickable:nth-child(1):hover {
     background-color: #437a28;
 }
 
-.question-option:nth-child(2):hover {
+.question-option-clickable:nth-child(2):hover {
     background-color: rgb(131, 41, 41);
 }
 
-.question-option:nth-child(3):hover {
+.question-option-clickable:nth-child(3):hover {
     background-color: #0c4080;
 }
 
-.question-option:nth-child(4):hover {
+.question-option-clickable:nth-child(4):hover {
     background-color: #946102;
 }
   

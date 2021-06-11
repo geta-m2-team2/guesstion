@@ -55,7 +55,7 @@ function pickOption(optionIndex) {
     let me = model.users.find(user => user.nick === model.nick);
     console.log("me", me);
 
-    me.answers[currentQuestion] = model.quiz.questions[currentQuestion].options[optionIndex];
+    me.answers[currentQuestion] = optionIndex;
 
     console.log("me modified", me);
 }
@@ -66,17 +66,36 @@ function pickOption(optionIndex) {
  */
 function getOptions(returnString = true) {
     let question = model.quiz.questions[model.quiz.currentQuestion];
+
+    let me = model.users.find(user => user.nick === model.nick);
+    
+    // If your user has not answered and is not QM.
+    console.log("me.answers", me.answers);
+    console.log("model.quiz.currentQuestion", model.quiz.currentQuestion);
+    let userHasLockedInAnswer = false;
+    if (me.answers.length-1 >= model.quiz.currentQuestion && model.isQuizMaster === false) userHasLockedInAnswer = true;
+    console.log("userHasLockedInAnswer", userHasLockedInAnswer);
+    
+    // if (userHasLockedInAnswer) {}
+
     let options = [];
 
     let currentOptionIndex = 0;
     for (let option of question.options) {
+        let onCLickString = userHasLockedInAnswer === true ? "" : `onClick="pickOption(${currentOptionIndex})"`;
         let optionClasses = "question-option";
 
         // If option has image, append special class for specific styling.
-        if (option.contentImage) optionClasses += " question-option-image";
+        if (userHasLockedInAnswer) {
+            optionClasses += " question-option-not-clickable";
+            if (me.answers[model.quiz.currentQuestion] === currentOptionIndex) optionClasses += " question-option-picked";
+        } else {
+            if (option.contentImage) optionClasses += " question-option-image-clickable";
+            optionClasses += " question-option-clickable"
+        }
 
         options.push( `
-                            <div class="${optionClasses}" ${option.contentImage ? 'style="background-image: url(' + option.contentImage + ')"': ""} onClick="pickOption(${currentOptionIndex})">
+                            <div class="${optionClasses}" ${option.contentImage ? 'style="background-image: url(' + option.contentImage + ')"': ""} ${onCLickString}>
                                 ${getTextOptionContent(option)}
                             </div>
                         `);
@@ -92,7 +111,7 @@ function getOptions(returnString = true) {
 function countDownEnded() {
     clearInterval(model.countDownIntervalID);
     model.countDownIntervalID  = undefined;
-    model.timeLeft = 25;
+    model.timeLeft = model.countDownSeconds;
     
     goToPage('results');
 }

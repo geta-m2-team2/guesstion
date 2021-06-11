@@ -8,8 +8,8 @@ function updateViews() {
         </div>
     `;
 
-    console.log("viewsCallbackFunc", model.viewsCallbackFunc);
-    console.log("viewsCallbackArgs", model.viewsCallbackArgs);
+    // console.log("viewsCallbackFunc", model.viewsCallbackFunc);
+    // console.log("viewsCallbackArgs", model.viewsCallbackArgs);
     
     if (model.viewsCallbackFunc) {
         // Callback app.
