@@ -1,15 +1,22 @@
 const model = {
     viewsCallbackFunc: undefined,
     viewsCallbackArgs: [],
-    currentPage: "question",
+    currentPage: "home",
     isQuizMaster: false,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",
-    nick: "Jamess",
-    countDownSeconds: 10,
-    timeLeft: 10,
+    nick: "TESTER", // **YOUR** Nick
+    countDownSeconds: 25, // Time to reset timeLeft to on a new timer event.
+    timeLeft: 25, // Time reminaing of current countdown timer event.
     countDownIntervalID: undefined,
     users: [
+        {
+            // User
+            nick: "TESTER",  // Nickname
+            prevScore: 0, // Score from previous question answer.
+            score: 0,     // Total score.
+            answers: []  // list of answers (question option indexes).
+        },
         {
             // User
             nick: "James",  // Nickname

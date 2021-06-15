@@ -111,6 +111,7 @@ function getOptions(returnString = true) {
         options.push( `
                             <div class="${optionClasses}" ${option.contentImage ? 'style="background-image: url(' + option.contentImage + ')"': ""} ${onCLickString}>
                                 ${getTextOptionContent(option)}
+                                ${userHasLockedInAnswer && me.answers[model.quiz.currentQuestion] === currentOptionIndex ? '<span class="ticked-option">✓<span>' : ""}
                             </div>
                         `);
         

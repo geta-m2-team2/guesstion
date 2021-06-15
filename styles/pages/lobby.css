@@ -14,7 +14,7 @@
     border: 2px solid black;
     border-radius: 5px;
 }
-#lobbyPageBody > h1, h2, h3, h4, p{
+#lobbyPageBody {
     text-align:center;
 }
 

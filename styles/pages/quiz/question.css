@@ -13,12 +13,14 @@
 }
 
 .question-option {
+    position: relative;
     margin:0.2rem;
     font-weight: bolder;
     color: white;
     border-radius: 5px;
     height: 100px;
     background-size: cover;
+    /* text-align: center; */
 }
 
 .question-option-clickable:hover {
@@ -95,4 +97,16 @@
 }
 .lobbyButton{
     width:150px;
+}
+
+.ticked-option {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bolder;
+    font-size: 100px;
+    margin: auto;
+    bottom: -15px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: rgba(255, 255, 255, 0.75);
 }
