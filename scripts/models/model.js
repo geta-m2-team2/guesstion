@@ -1,11 +1,11 @@
 const model = {
     viewsCallbackFunc: undefined,
     viewsCallbackArgs: [],
-    currentPage: "home",
+    currentPage: "question",
     isQuizMaster: false,
     inputQuizMasterPassword: "",
     quizMasterPassword: "a",
-    nick: "James",
+    nick: "Jamess",
     countDownSeconds: 10,
     timeLeft: 10,
     countDownIntervalID: undefined,

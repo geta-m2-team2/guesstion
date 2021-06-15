@@ -68,6 +68,18 @@ function getOptions(returnString = true) {
     let question = model.quiz.questions[model.quiz.currentQuestion];
 
     let me = model.users.find(user => user.nick === model.nick);
+
+    if (!me) {
+        // Stop any running timer to avoid re-running this error for every second.
+        if (model.countDownIntervalID) stopCountdown();
+        
+        // Display error.
+        console.error(`me is undefined! Likely cause: nick '${model.nick}' is not in user list.`);
+        alert(`FATAL ERROR: Nick '${model.nick}' is not in userlist!`);
+
+        // Bail!
+        return;
+    }
     
     // If your user has not answered and is not QM.
     console.log("me.answers", me.answers);
@@ -85,11 +97,11 @@ function getOptions(returnString = true) {
         let onCLickString = userHasLockedInAnswer === true ? "" : `onClick="pickOption(${currentOptionIndex})"`;
         let optionClasses = "question-option";
 
-        // If option has image, append special class for specific styling.
         if (userHasLockedInAnswer) {
             optionClasses += " question-option-not-clickable";
             if (me.answers[model.quiz.currentQuestion] === currentOptionIndex) optionClasses += " question-option-picked";
         } else {
+            // If option has image, append special class for specific styling.
             if (option.contentImage) optionClasses += " question-option-image-clickable";
             optionClasses += " question-option-clickable"
         }
@@ -108,9 +120,13 @@ function getOptions(returnString = true) {
     return options;
 }
 
-function countDownEnded() {
+function stopCountdown() {
     clearInterval(model.countDownIntervalID);
     model.countDownIntervalID  = undefined;
+}
+
+function countDownEnded() {
+    stopCountdown();
     model.timeLeft = model.countDownSeconds;
     
     goToPage('results');
