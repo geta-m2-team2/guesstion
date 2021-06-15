@@ -5,3 +5,27 @@
     background-color: rgba(124, 46, 104, 0.137);
     width: 100%;
 }
+
+.unstyled-button {
+    /* background-color: unset; */
+    color:unset;
+    display:block;
+    margin:unset;
+    font-size:unset;
+    font-family:unset;
+    text-shadow:unset;
+    padding:unset;
+    border-radius:unset;
+    border-color: unset;
+}
+
+.unstyled-button:hover {
+    cursor: pointer;
+    background-color:unset;
+}
+
+.unstyled-button:disabled {
+    cursor:default;
+    background-color:unset;
+    opacity: unset;
+}

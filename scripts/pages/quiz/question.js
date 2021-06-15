@@ -23,6 +23,8 @@ function renderQuestionView() {
             <div class="quizNavBody">
                 ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="proceedToPage('results', false)">‹</button>` : ""}
                 ${model.isQuizMaster ? `<button class="lobbyButton navButtons" onClick="returnToLobby()">Return to Lobby</button>` : ""}
+                ${model.isQuizMaster ? `<button onClick="stopCountdown()">Pause countdown</button>` : "" }
+                ${model.isQuizMaster ? `<button onClick="setMyInterval()">Resume countdown</button>` : "" }
                 ${model.isQuizMaster ? `<button class="forwardButton navButtons" onClick="goToPage('results')">›</button>` : ""}
             </div>
         </div>
