@@ -84,7 +84,7 @@ const model = {
                         {
                             // Option
                             contentText: "Picture of turnips",
-                            contentImage: "https://puu.sh/HLDW2/60d0248ebc.jpg",
+                            contentImage: "https://geta-m2-team2.github.io/guesstion/sample/turnip.jpg",
                             isCorrect: false,
                             votes: 10
                         },
@@ -101,7 +101,7 @@ const model = {
                     // Question
                     title: "Portal",
                     description: "Hva heter karakteren du spiller i Portal 2",
-                    imageUrl: "https://puu.sh/HLDHF/57622c6603.jpg",
+                    imageUrl: "https://geta-m2-team2.github.io/guesstion/sample/portal.jpg",
                     scoreMultiplier: 1,
                     options: [
                         {
