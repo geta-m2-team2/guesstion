@@ -11,14 +11,13 @@ function renderQuestionView() {
     <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
         <div id="questionPageBody">
             <h1>${question.title}</h1>
-            ${model.timeLeft} secs
+            <div id="question-timer-container">${model.timeLeft} seconds remaining</div>
             <div id="question-description">
                 ${ question.description ? `<p>${question.description}</p>` :  "" }
             </div>
             <div id="question-image-container">
                 ${ question.imageUrl ? `<img id="question-image" src="${question.imageUrl}">` :  "" }
             </div>
-            <div id="question-timer-container"></div>
             <div id="options-container">${getOptions()}</div>
             <div class="quizNavBody">
                 ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="proceedToPage('results', false)">‹</button>` : ""}
@@ -29,6 +28,10 @@ function renderQuestionView() {
             </div>
         </div>
     `;
+}
+
+function updateCountdownView() {
+    document.getElementById("question-timer-container").innerHTML = `${model.timeLeft} seconds remaining`;
 }
 
 /**
@@ -53,9 +56,7 @@ function getTextOptionContent(option) {
 
 function pickOption(optionIndex) {
     let currentQuestion = model.quiz.currentQuestion;
-    console.log("pickOption", event);
     let me = model.users.find(user => user.nick === model.nick);
-    console.log("me", me);
 
     // Pick the option
     me.answers[currentQuestion] = optionIndex;
@@ -65,7 +66,7 @@ function pickOption(optionIndex) {
         me.score += model.timeLeft * 100 * model.quiz.questions[currentQuestion].scoreMultiplier;
     }
 
-    console.log("me modified", me);
+    updateViews();
 }
 
 /**
@@ -148,5 +149,5 @@ function timer(){
         countDownEnded();
     }
 
-    updateViews();
+    updateCountdownView();
 }
