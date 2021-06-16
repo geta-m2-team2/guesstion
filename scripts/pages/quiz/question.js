@@ -11,7 +11,7 @@ function renderQuestionView() {
     <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
         <div id="questionPageBody">
             <h1>${question.title}</h1>
-            ${model.timeLeft} secs | score: ${model.users.find(user => user.nick === model.nick).score}
+            ${model.timeLeft} secs
             <div id="question-description">
                 ${ question.description ? `<p>${question.description}</p>` :  "" }
             </div>
