@@ -11,7 +11,7 @@ function renderQuestionView() {
     <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
         <div id="questionPageBody">
             <h1>${question.title}</h1>
-            ${model.timeLeft} secs
+            ${model.timeLeft} secs | score: ${model.users.find(user => user.nick === model.nick).score}
             <div id="question-description">
                 ${ question.description ? `<p>${question.description}</p>` :  "" }
             </div>
@@ -57,7 +57,13 @@ function pickOption(optionIndex) {
     let me = model.users.find(user => user.nick === model.nick);
     console.log("me", me);
 
+    // Pick the option
     me.answers[currentQuestion] = optionIndex;
+
+    // Get scored (timeLeft * 100 * multiplier), if correct.
+    if (model.quiz.questions[currentQuestion].options[optionIndex].isCorrect) {
+        me.score += model.timeLeft * 100 * model.quiz.questions[currentQuestion].scoreMultiplier;
+    }
 
     console.log("me modified", me);
 }
