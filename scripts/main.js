@@ -1,4 +1,3 @@
-const images = ['https://i.stack.imgur.com/2RAv2.png', 'https://i.stack.imgur.com/Tq5DA.png', 'https://i.stack.imgur.com/3KRtW.png', 'https://i.stack.imgur.com/iLyVi.png'];
 function updateViews() {
     let renderedPage = renderCurrentPageView(); // Alt 1: Callback.
 
@@ -7,9 +6,6 @@ function updateViews() {
             ${renderedPage}
         </div>
     `;
-
-    // console.log("viewsCallbackFunc", model.viewsCallbackFunc);
-    // console.log("viewsCallbackArgs", model.viewsCallbackArgs);
     
     if (model.viewsCallbackFunc) {
         // Callback app.
@@ -19,6 +15,7 @@ function updateViews() {
         model.viewsCallbackArgs = [];
     } 
     
+    if (model.isQuizMaster === true) document.getElementById('bgm').style.display = "block";
 
     // FIXME: Temporary development manual page navigation
     document.getElementById("devel-nav").innerHTML = `   
@@ -74,5 +71,3 @@ document.getElementById('bgm').innerHTML = `
     style="border: solid 4px #37474F">
 </iframe>
 `;
-
-if (model.isQuizMaster === true) document.getElementById('bgm').style.display = "block";
