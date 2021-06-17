@@ -9,9 +9,9 @@ function renderQuestionView() {
 
     return `
     <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
+    <div id="question-timer-container"><span id="question-timer-text">${model.timeLeft}</span></div>
         <div id="questionPageBody">
             <h1>${question.title}</h1>
-            <div id="question-timer-container"><span id="question-timer-text">${model.timeLeft}</span></div>
             <div id="question-description">
                 ${ question.description ? `<p>${question.description}</p>` :  "" }
             </div>

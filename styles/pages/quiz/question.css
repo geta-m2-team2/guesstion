@@ -112,16 +112,20 @@
 }
 
 #question-timer-container{
-    position: absolute;
+    position: fixed;
     padding: 15px;
-    width:75px;
-    height:75px;
-    margin-left:50px;
+    /* width:25vw;
+    height:25vh; */
+    width: 75px;
+    height: 75px;
+    /* margin-left:50px; */
     font-size:4rem;
     font-weight: bolder;
     border: 2px solid white;
     border-radius:50%;
-
+    /* bottom:40%; */
+    top: 50px;
+    left: 25px;
 }
 
 #question-timer-text {
