@@ -64,3 +64,15 @@ function renderCurrentPageView(callback) {
 }
 
 updateViews();
+
+// Background music via YouTube embed in iframe:
+document.getElementById('bgm').innerHTML = `
+<iframe id="existing-iframe-example"
+    width="192" height="108"
+    src="https://www.youtube.com/embed/${model.bgmUrlId}?playlist=${model.bgmUrlId}&autoplay=1&loop=1"
+    frameborder="0"
+    style="border: solid 4px #37474F">
+</iframe>
+`;
+
+if (model.isQuizMaster === true) document.getElementById('bgm').style.display = "block";
