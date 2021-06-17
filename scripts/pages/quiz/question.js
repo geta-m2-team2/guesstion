@@ -11,7 +11,7 @@ function renderQuestionView() {
     <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
         <div id="questionPageBody">
             <h1>${question.title}</h1>
-            <div id="question-timer-container">${model.timeLeft} seconds remaining</div>
+            <div id="question-timer-container"><span id="question-timer-text">${model.timeLeft}</span></div>
             <div id="question-description">
                 ${ question.description ? `<p>${question.description}</p>` :  "" }
             </div>
@@ -31,7 +31,7 @@ function renderQuestionView() {
 }
 
 function updateCountdownView() {
-    document.getElementById("question-timer-container").innerHTML = `${model.timeLeft} seconds remaining`;
+    document.getElementById("question-timer-container").innerHTML = `<span id="question-timer-text">${model.timeLeft}</span>`;
 }
 
 /**
