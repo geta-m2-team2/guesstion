@@ -8,25 +8,25 @@ function renderQuestionView() {
     if (!model.countDownIntervalID) model.viewsCallbackFunc = setMyInterval;
 
     return `
-    <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
-    <div id="question-timer-container"><span id="question-timer-text">${model.timeLeft}</span></div>
-        <div id="questionPageBody">
-            <h1>${question.title}</h1>
-            <div id="question-description">
-                ${ question.description ? `<p>${question.description}</p>` :  "" }
-            </div>
-            <div id="question-image-container">
-                ${ question.imageUrl ? `<img id="question-image" src="${question.imageUrl}">` :  "" }
-            </div>
-            <div id="options-container">${getOptions()}</div>
-            <div class="quizNavBody">
-                ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="proceedToPage('results', false)">‹</button>` : ""}
-                ${model.isQuizMaster ? `<button class="lobbyButton navButtons" onClick="returnToLobby()">Return to Lobby</button>` : ""}
-                ${model.isQuizMaster ? `<button onClick="stopCountdown()">Pause countdown</button>` : "" }
-                ${model.isQuizMaster ? `<button onClick="setMyInterval()">Resume countdown</button>` : "" }
-                ${model.isQuizMaster ? `<button class="forwardButton navButtons" onClick="goToPage('results')">›</button>` : ""}
-            </div>
+    <div id="questionPageBody">
+        <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
+        <div id="question-timer-container"><span id="question-timer-text">${model.timeLeft}</span></div>
+        <h1>${question.title}</h1>
+        <div id="question-description">
+            ${ question.description ? `<span id="question-description-text">${question.description}</span>` :  "" }
         </div>
+        <div id="question-image-container">
+            ${ question.imageUrl ? `<img id="question-image" src="${question.imageUrl}">` :  "" }
+        </div>
+        <div id="options-container">${getOptions()}</div>
+        <div class="quizNavBody">
+            ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="proceedToPage('results', false)">‹</button>` : ""}
+            ${model.isQuizMaster ? `<button class="lobbyButton navButtons" onClick="returnToLobby()">Return to Lobby</button>` : ""}
+            ${model.isQuizMaster ? `<button onClick="stopCountdown()">Pause countdown</button>` : "" }
+            ${model.isQuizMaster ? `<button onClick="setMyInterval()">Resume countdown</button>` : "" }
+            ${model.isQuizMaster ? `<button class="forwardButton navButtons" onClick="goToPage('results')">›</button>` : ""}
+        </div>
+    </div>
     `;
 }
 
