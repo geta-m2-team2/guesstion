@@ -25,6 +25,8 @@
 .question-option {
     position: relative;
     margin:0.2rem;
+    padding: 0 15px 0 15px;
+    font-size: 2rem;
     font-weight: bolder;
     color: white;
     border-radius: 5px;

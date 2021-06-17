@@ -42,13 +42,15 @@ function createBarChart(votes) {
         data: {
             labels: question.options.map(
                 function(obj) {
-                    let retv = `${labelPrefaces[currentOptionLabelIndex]}: ${obj.contentText}`;
+                    let symbol = "";
+                    question.options[currentOptionLabelIndex].isCorrect === true ? symbol = '✅' : symbol = "❌";
+                    let retv = `${symbol} ${labelPrefaces[currentOptionLabelIndex]}: ${obj.contentText}`;
                     currentOptionLabelIndex++;
 
                     return retv;
                 }),
             datasets: [{
-                label:"Test",
+                label:"Votes",
                 data: votes,
                 backgroundColor: [
                     '#66bf39',
@@ -66,10 +68,10 @@ function createBarChart(votes) {
             },
             plugins: {
                 legend: {
-                    display: false
+                    display: false,
                 }
             }
-        }
+        },
     });
 
       document.getElementById("my-chart").appendChild(canvas);
