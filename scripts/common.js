@@ -9,8 +9,6 @@ function getParticipantsNicks() {
         nicks.push(user.nick);
     }
 
-    console.log("nicks", nicks);
-
     return nicks;
 }
 
@@ -36,7 +34,6 @@ function gotoQuestionAndResetTimer(questionIndexString) {
  * @returns {String} Generated HTML.
  */
 function generateSelectMenu(id, options, selectProperty, onChange, label="") {
-    console.log("options", options)
     let optionsHTML = "";
 
     for (let option of options) {
@@ -52,7 +49,6 @@ function generateSelectMenu(id, options, selectProperty, onChange, label="") {
 }
 
 function goToPage(pageName) {
-    console.log("goToPage", pageName);
     model.currentPage = pageName;
     updateViews();
 }
@@ -85,4 +81,8 @@ function timer(){
 
 function setMyInterval() {
     model.countDownIntervalID = setInterval(timer, 1000)
+}
+
+function updateCountdownView() {
+    document.getElementById("question-timer-container").innerHTML = `<span id="question-timer-text">${model.timeLeft}</span>`;
 }

@@ -6,6 +6,10 @@
     font-size: 2rem;
 }
 
+h1{
+    margin:65px 0 0;
+}
+
 .nick-col {
     width: 400px;
     text-align: left;
@@ -19,4 +23,21 @@
     padding-top: 50px;
     font-size: 1.5rem;
     text-align: center;
+}
+.quizNavBody{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:99.9vw;
+}
+
+.backButton,.forwardButton{
+    width:50px;
+}
+
+.backButton{
+    margin-left:30%;
+}
+.forwardButton{
+    margin-right:30%;
 }

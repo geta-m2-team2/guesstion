@@ -19,9 +19,9 @@ function updateViews() {
 
     // FIXME: Temporary development manual page navigation
     document.getElementById("devel-nav").innerHTML = `
-      <span id="devel-nav-indicator">DEVEL</span>
+    <span id="devel-nav-indicator">DEVEL</span>
       <div id="devel-nav-contents">
-        <label for="page-nav">Goto page: </label>
+        <label for="page-nav">Page: </label>
         <select name="Page" id="page-nav" onChange="goToPage(this.value.toLowerCase())">
             <option value="Home" ${model.currentPage === "home" ? 'selected="selected"' : ""}>Home</option>
             <option value="Lobby" ${model.currentPage === "lobby" ? 'selected="selected"' : ""}>Lobby</option>
@@ -59,7 +59,6 @@ function updateViews() {
 function setQuizMaster(enable) {
     enable = enable === 'true';
 
-    console.log("enable", enable);
     model.isQuizMaster = enable;
 
     updateViews();

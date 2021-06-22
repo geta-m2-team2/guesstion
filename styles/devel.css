@@ -2,28 +2,12 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: rgba(124, 46, 104, 0.137);
+    background-color: rgba(40, 95, 179, 0.692);
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.devel-area > button {
-    padding: 5px;
-    margin:5px 0.2rem;
-    
-}
-
-.devel-area > * {
-    margin:5px;
-}
-
-.devel-area > #devel-nav-indicator {
-    margin:5px;
-    background-color: crimson;
-}
-
-#devel-nav-indicator {
+    height: 30px;
+    margin: 0;
+    overflow-y: hidden;
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
 }
 
 .unstyled-button {
@@ -37,6 +21,34 @@
     border-radius:unset;
     border-color: unset;
 }
+
+#devel-nav-indicator {
+    display:inline-block;
+    background-color:rgb(39, 105, 192);
+    font-size:1.5rem;
+    padding: 0px 5px 0 px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#devel-nav-contents {
+    display:inline-block;
+    width:80%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#devel-nav-contents > button {
+    padding: 0 5px 0 5px;
+    margin:1px 0.2rem;
+    background-color: rgb(39, 105, 192);
+    border-color: rgb(60, 100, 153);
+    color: white;
+}
+
+#devel-nav-contents > button:hover {
+    background-color: rgb(29, 78, 141);
+}
+
 
 .unstyled-button:hover {
     cursor: pointer;

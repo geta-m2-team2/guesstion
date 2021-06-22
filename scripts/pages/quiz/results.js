@@ -6,15 +6,16 @@ function renderResultsView() {
 
     return `
       <div id="results-container">
-          <h1>Results #${model.quiz.currentQuestion+1}/${model.quiz.questions.length}: ${question.title}</h1>
+        <div class="quiz-nav-container">
+            ${model.isQuizMaster ? `<button class="backButton" onClick="goToPage('question')">‹</button>` : ""}
+            ${model.isQuizMaster ? `<button class="resultLobby" onClick="returnToLobby()">Lobby</button>` : ""}
+            ${model.isQuizMaster ? `<button class="forwardButton" onClick="goToPage('scoreboard')">›</button>` : ""}
+        </div>
+        <h1>Results #${model.quiz.currentQuestion+1}/${model.quiz.questions.length}: ${question.title}</h1>
 
           <div id="my-chart"></div>
-
-          <div class="quiz-nav-container">
-              ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="goToPage('question')">‹</button>` : ""}
-              ${model.isQuizMaster ? `<button class="lobbyButton navButtons" onClick="returnToLobby()">Return to Lobby</button>` : ""}
-              ${model.isQuizMaster ? `<button class="forwardButton navButtons" onClick="goToPage('scoreboard')">›</button>` : ""}
-          </div>
+       
+          
       </div>
     `;
 }

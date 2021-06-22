@@ -42,9 +42,12 @@
     margin:auto;
 }
 .quiz-nav-container{
-    width:80%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:99.9vw;
     display:flex;
-    margin:auto;
+    margin: 5px auto 0;
 }
 
 .backButton, .forwardButton{
@@ -57,7 +60,7 @@
 .forwardButton{
     margin-right:30%;
 }
-.lobbyButton{
-    width:150px;
+.resultLobby{
+    width:20%;
 }
 

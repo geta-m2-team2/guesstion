@@ -1,13 +1,13 @@
 function renderLobbyPageView() {
     return `
         <div id="lobbyPageBody">
+            <button class="startButton" ${model.isQuizMaster ? "" : "disabled"} onClick="launchQuiz()">Launch quiz</button>
             <h1>Quiz Lobby</h1>
             <h2>Participants</h2>
             <div class="participants-container">
                 ${printParticipantList()}
             </div>
             <br><br>
-            <button ${model.isQuizMaster ? "" : "disabled"} onClick="launchQuiz()">Launch quiz</button>
         </div>
     `;
 }

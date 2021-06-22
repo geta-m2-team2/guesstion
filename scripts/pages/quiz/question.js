@@ -5,6 +5,13 @@ function renderQuestionView() {
 
     return `
     <div id="questionPageBody">
+        <div class="quizNavBody">
+            ${model.isQuizMaster ? `<button class="backButton" onClick="proceedToPage('results', false)">‹</button>` : ""}
+            ${model.isQuizMaster ? `<button class="navButtons" onClick="returnToLobby()">Lobby</button>` : ""}
+            ${model.isQuizMaster ? `<button class="navButtons" onClick="stopCountdown()">Pause</button>` : "" }
+            ${model.isQuizMaster ? `<button class="navButtons" onClick="setMyInterval()">Resume</button>` : "" }
+            ${model.isQuizMaster ? `<button class="forwardButton" onClick="goToPage('results')">›</button>` : ""}
+        </div>
         <div id="question-counter">Question ${model.quiz.currentQuestion + 1} / ${model.quiz.questions.length}</div>
         <div id="question-timer-container"><span id="question-timer-text">${model.timeLeft}</span></div>
         <h1>${question.title}</h1>
@@ -15,19 +22,9 @@ function renderQuestionView() {
             ${ question.imageUrl ? `<img id="question-image" src="${question.imageUrl}">` :  "" }
         </div>
         <div id="options-container">${getOptions()}</div>
-        <div class="quizNavBody">
-            ${model.isQuizMaster ? `<button class="backButton navButtons" onClick="proceedToPage('results', false)">‹</button>` : ""}
-            ${model.isQuizMaster ? `<button class="lobbyButton navButtons" onClick="returnToLobby()">Return to Lobby</button>` : ""}
-            ${model.isQuizMaster ? `<button onClick="stopCountdown()">Pause countdown</button>` : "" }
-            ${model.isQuizMaster ? `<button onClick="setMyInterval()">Resume countdown</button>` : "" }
-            ${model.isQuizMaster ? `<button class="forwardButton navButtons" onClick="goToPage('results')">›</button>` : ""}
-        </div>
+        
     </div>
     `;
-}
-
-function updateCountdownView() {
-    document.getElementById("question-timer-container").innerHTML = `<span id="question-timer-text">${model.timeLeft}</span>`;
 }
 
 /**
@@ -36,7 +33,6 @@ function updateCountdownView() {
  * @returns {String} Computed option content string.
  */
 function getTextOptionContent(option) {
-    // console.log("getOptionContent", option);
     if (!option.contentText) {
         console.error("Missing contentText for option!". option);
         return;
@@ -87,11 +83,8 @@ function getOptions(returnString = true) {
     }
     
     // If your user has not answered and is not QM.
-    console.log("me.answers", me.answers);
-    console.log("model.quiz.currentQuestion", model.quiz.currentQuestion);
     let userHasLockedInAnswer = false;
     if (me.answers.length-1 >= model.quiz.currentQuestion && model.isQuizMaster === false) userHasLockedInAnswer = true;
-    console.log("userHasLockedInAnswer", userHasLockedInAnswer);
     
     // if (userHasLockedInAnswer) {}
 

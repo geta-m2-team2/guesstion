@@ -17,6 +17,14 @@
 #lobbyPageBody {
     text-align:center;
 }
+.startButton{
+    position: fixed;
+    top: 0;
+    left:30%;
+
+    width:40%;
+    margin:10px auto;
+}
 
 .participant-nick > h3{
     margin:0.2rem;
