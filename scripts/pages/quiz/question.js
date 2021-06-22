@@ -1,7 +1,3 @@
-function setMyInterval() {
-    model.countDownIntervalID = setInterval(timer, 1000)
-}
-
 function renderQuestionView() {
     let question = model.quiz.questions[model.quiz.currentQuestion];
 
@@ -128,30 +124,4 @@ function getOptions(returnString = true) {
     if (returnString) return options.join(" ")
 
     return options;
-}
-
-function stopCountdown() {
-    clearInterval(model.countDownIntervalID);
-    model.countDownIntervalID  = undefined;
-}
-
-function stopTimerAndResetCountdown() {
-    stopCountdown();
-    model.timeLeft = model.countDownSeconds;
-}
-
-function countDownEnded() {
-    stopTimerAndResetCountdown();
-
-    goToPage('results');
-}
-
-function timer(){
-    model.timeLeft -= 1;
-
-    if (model.timeLeft <= 0) { 
-        countDownEnded();
-    }
-
-    updateCountdownView();
 }

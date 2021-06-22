@@ -85,11 +85,6 @@ function determineDeltaChar(score, prevScore) {
     `;
 }
 
-/**
- * FIXME: What if most increase tie?
- * FIXME: Show more events than just most increase?
- * @returns 
- */
 function getFeaturedScore() {
     model.users.sort(function(a, b) {
         return b.score - a.score;
