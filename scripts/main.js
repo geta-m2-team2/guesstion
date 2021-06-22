@@ -15,7 +15,7 @@ function updateViews() {
         model.viewsCallbackArgs = [];
     } 
     
-    if (model.isQuizMaster === true) document.getElementById('bgm').style.display = "block";
+    model.isQuizMaster === true ? document.getElementById('bgm').style.display = "block" : document.getElementById('bgm').style.display = "none";
 
     // FIXME: Temporary development manual page navigation
     document.getElementById("devel-nav").innerHTML = `
