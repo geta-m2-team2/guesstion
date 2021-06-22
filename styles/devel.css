@@ -4,17 +4,36 @@
     left: 0;
     background-color: rgba(124, 46, 104, 0.137);
     width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.devel-area > button {
+    padding: 5px;
+    margin:5px 0.2rem;
+    
+}
+
+.devel-area > * {
+    margin:5px;
+}
+
+.devel-area > #devel-nav-indicator {
+    margin:5px;
+    background-color: crimson;
+}
+
+#devel-nav-indicator {
 }
 
 .unstyled-button {
     /* background-color: unset; */
     color:unset;
-    display:block;
+    display:inline-block;
     margin:unset;
     font-size:unset;
     font-family:unset;
     text-shadow:unset;
-    padding:unset;
     border-radius:unset;
     border-color: unset;
 }
