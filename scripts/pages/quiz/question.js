@@ -85,8 +85,6 @@ function getOptions(returnString = true) {
     // If your user has not answered and is not QM.
     let userHasLockedInAnswer = false;
     if (me.answers.length-1 >= model.quiz.currentQuestion && model.isQuizMaster === false) userHasLockedInAnswer = true;
-    
-    // if (userHasLockedInAnswer) {}
 
     let options = [];
 

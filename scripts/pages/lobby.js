@@ -23,8 +23,6 @@ function printParticipantList() {
         a += `<div class="participant-nick"><h3>${nick}</h3></div>`
     }
 
-    // return getParticipantsNicks().join(" ");
-
     return a;
 }
 
