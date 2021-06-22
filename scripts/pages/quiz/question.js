@@ -135,10 +135,14 @@ function stopCountdown() {
     model.countDownIntervalID  = undefined;
 }
 
-function countDownEnded() {
+function stopTimerAndResetCountdown() {
     stopCountdown();
     model.timeLeft = model.countDownSeconds;
-    
+}
+
+function countDownEnded() {
+    stopTimerAndResetCountdown();
+
     goToPage('results');
 }
 
