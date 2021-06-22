@@ -43,7 +43,22 @@ function updateViews() {
                          "gotoQuestionAndResetTimer",
                          "Question: "
                          )}
-    `;
+
+    <label for="qm-toggle">Quiz Master </label>
+    <select name="qm-toggle-select" id="qm-toggle-select" onChange="setQuizMaster(this.value)">
+      <option value="true" ${model.isQuizMaster === true ? 'selected="selected"' : ""}>Yes</option>
+      <option value="false" ${model.isQuizMaster === false ? 'selected="selected"' : ""}>No</option>
+    </select>
+  `;
+}
+
+function setQuizMaster(enable) {
+    enable = enable === 'true';
+
+    console.log("enable", enable);
+    model.isQuizMaster = enable;
+
+    updateViews();
 }
 
 function renderErrorPageView(errorCode, page) {
