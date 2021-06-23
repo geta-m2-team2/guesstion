@@ -62,10 +62,6 @@ const model = {
         },
     ],
     quiz: {
-            soundtrack: {
-                contentType: "youtube-url",
-                content: "https://www.youtube.com/watch?v=XwuxFtaaOW0",
-            },
             currentQuestion: 0,
             questions: [
                 {
