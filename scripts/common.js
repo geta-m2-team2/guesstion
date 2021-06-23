@@ -29,7 +29,7 @@ function gotoQuestionAndResetTimer(questionIndexString) {
  * @param {String} id ID (selector).
  * @param {[{value: Number, text: String}]} options Array of options objects with value and text properties.
  * @param {*} selectProperty Property or variable to check option against for setting "selected".
- * @param {Function} onChange Function to call with arg this.value.toLowerCase().
+ * @param {String} onChange Name of function to call with arg this.value.toLowerCase().
  * @param {String} label Label for the dropdown menu.
  * @returns {String} Generated HTML.
  */

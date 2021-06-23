@@ -1,15 +1,16 @@
 const model = {
+    developer: true,
     viewsCallbackFunc: undefined,
     viewsCallbackArgs: [],
     currentPage: "home",
     isQuizMaster: false, // Set true to always be QM (NB: applies to **everyone**).
     inputQuizMasterPassword: "",
-    quizMasterPassword: "a", // FIXME: Probably change this.
+    quizMasterPassword: "a", // FIXME: Probably change this to something else.
     nick: "TESTER", // **YOUR** Nick.
     countDownSeconds: 25, // Time to reset timeLeft to on a new timer event.
-    timeLeft: 25, // Time reminaing of current countdown timer event.
+    timeLeft: 25, // Time remaining of current countdown timer event.
     countDownIntervalID: undefined, // Internal ID assigned by setInterval, stored here to keep track of running timers.
-    bgmUrlId: "Bvw6ZxKtGRs", // Video ID of YouTube viceo (https://youtube.com/watch?v=<ID>).
+    bgmUrlId: "Bvw6ZxKtGRs", // Video ID of YouTube video (https://youtube.com/watch?v=<ID>).
     users: [
         {
             // User
